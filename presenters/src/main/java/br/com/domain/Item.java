@@ -43,14 +43,24 @@ public class Item {
 
     public static List<ItemOutputPort> converterEntityEmOutputPort(List<Item> itemsEntity){
         List<ItemOutputPort> item = new ArrayList<>();
-            itemsEntity.forEach(x -> {
-                ItemOutputPort itemOutputPort = ItemOutputPort.builder()
-                        .id(x.getId())
-                        .tipoDoItem(x.getTipoDoItem().getDescricao())
-                        .quantidade(x.getQuantidade())
-                        .build();
-                item.add(itemOutputPort);
-            });
+
+        for(Item i : itemsEntity) {
+
+            item.add(ItemOutputPort.builder()
+                    .id(i.getId())
+                    .tipoDoItem(i.getTipoDoItem().getDescricao())
+                    .quantidade(i.getQuantidade())
+                    .build());
+        }
+
+//            itemsEntity.forEach(x -> {
+//                ItemOutputPort itemOutputPort = ItemOutputPort.builder()
+//                        .id(x.getId())
+//                        .tipoDoItem(x.getTipoDoItem().getDescricao())
+//                        .quantidade(x.getQuantidade())
+//                        .build();
+//                item.add(itemOutputPort);
+//            });
         return item;
     }
 

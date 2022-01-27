@@ -43,6 +43,7 @@ public class HospitalResponse {
                 .endereco(hospitalOutputPort.getEndereco())
                 .percentualDeOcupacapo(hospitalOutputPort.getPercentualDeOcupacapo())
                 .localizacao(localizacaoOutputPort)
+                .inventarioResponse(inventarioResponse)
                 .build();
 
         return hospitalResponse;
